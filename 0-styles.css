@@ -1,15 +1,12 @@
-body {
-    height: 100vh;
-}
-
 ul {
     height: auto;
 }
 ul, li {
-    height: 100vh;
+    height: 74vh;
     display: inline;
     display: flex;
     align-items: center;
+
 }
 .icon {
     display: inline-block;
@@ -19,13 +16,9 @@ ul, li {
 .i-html, .i-css, .i-js{
     background-image: url("/d416199ca6ecdbd0f8a3.png");
     background-repeat: no-repeat;
-    width: 50%;
-    border: solid 1px red;
-    border-radius: 33px;
+    width: 90%;
 }
-.i-html {
-    background-position-x: left;
-}
+
 .i-css {
     background-position-x: center;
 }
@@ -34,9 +27,16 @@ ul, li {
 }
 
 li {
-    color: aqua;
-    flex-direction: column;
-    width: 100%;
+
+       flex-direction: column;
+       background-color: #f7f7f7;
+       border: 1px solid;
+       border-radius: 33px;
+       font-size: 33px;
+       font-weight: 600;
+       margin: 0px 3%;
+       min-width: 320px;
+       padding-top: 15px;
 }
 
 li:first-child {
