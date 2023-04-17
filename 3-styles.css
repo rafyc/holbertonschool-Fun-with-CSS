@@ -1,0 +1,78 @@
+:root {
+    --size: 80px;
+    --spacing: 20px;
+    --hover-size: 10px;
+    --hover-calc: calc(var(--size) + var(--hover-size));
+}
+.menu {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.menu-open-button {
+    display: flex;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: brown;
+    border-radius: calc(var(--size) / 2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-line {
+    display: flex;
+    width: 26px;
+    position: absolute;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+}
+.menu-line-2 {
+    margin-bottom: var(--spacing);
+}
+.menu-line-3 {
+    margin-top: var(--spacing);
+}
+.menu:hover {
+    transform: scale(1.1);
+  }
+
+
+/* :root {
+    --size: 80px;
+    --spacing: 20px;
+    --hover-size: 10px;
+    --hover-calc: calc(var(--size) + var(--hover-size));
+}
+.menu {
+    position: relative;
+}
+.menu-open-button {
+    display: flex;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: brown;
+    border-radius: calc(var(--size) / 2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.menu-line {
+    display: flex;
+    width: 26px;
+    position: absolute;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+}
+.menu-line-2 {
+    margin-bottom: var(--spacing);
+}
+.menu-line-3 {
+    margin-top: var(--spacing);
+}
+
+.menu-open-button:hover {
+ --size: var(--hover-calc);
+} */
