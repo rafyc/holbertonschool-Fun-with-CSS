@@ -1,31 +1,65 @@
 :root {
-    --size: 80px;
-    --spacing: 20px;
+    --size: 50px;
+    --spacing: 15px;
     --hover-size: 10px;
     --hover-calc: calc(var(--size) + var(--hover-size));
 }
+a {
+    text-decoration: none;
+}
+.menu-item i {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+input {
+    opacity: 0;
+}
 .menu {
     position: relative;
-    display: inline-block;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-item{
+    margin-top: 10px;
+    background-color: brown;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size) / 2);
+}
+
+.menu-item:hover i {
+    color: brown;
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: calc(var(--size) / 2);;
+}
+.menu .menu-item:first-of-type {
+    margin-top: 50px;
+}
+.menu-open-button {
+    display: flex;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: brown;
+    border-radius: calc(var(--size) / 2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.menu-open-button {
-    display: flex;
-    position: absolute;
-    width: var(--size);
-    height: var(--size);
-    background-color: brown;
-    border-radius: calc(var(--size) / 2);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .menu-line {
     display: flex;
-    width: 26px;
+    width: 20px;
     position: absolute;
-    height: 3px;
+    height: 2px;
     background-color: rgb(255, 255, 255);
+    transition: rotate 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .menu-line-2 {
     margin-bottom: var(--spacing);
@@ -33,46 +67,22 @@
 .menu-line-3 {
     margin-top: var(--spacing);
 }
-.menu:hover {
-    transform: scale(1.1);
-  }
-
-
-/* :root {
-    --size: 80px;
-    --spacing: 20px;
-    --hover-size: 10px;
-    --hover-calc: calc(var(--size) + var(--hover-size));
-}
-.menu {
-    position: relative;
-}
-.menu-open-button {
-    display: flex;
-    position: absolute;
-    width: var(--size);
-    height: var(--size);
-    background-color: brown;
-    border-radius: calc(var(--size) / 2);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-.menu-line {
-    display: flex;
-    width: 26px;
-    position: absolute;
-    height: 3px;
-    background-color: rgb(255, 255, 255);
-}
-.menu-line-2 {
-    margin-bottom: var(--spacing);
-}
-.menu-line-3 {
-    margin-top: var(--spacing);
-}
-
 .menu-open-button:hover {
- --size: var(--hover-calc);
-} */
+    transform: scale(1.2);
+
+  }
+input:checked + .menu-open-button .menu-line-1 {
+    opacity: 0;
+}
+input:checked + .menu-open-button .menu-line-2 {
+    rotate: 45deg;
+    top: 24px;
+
+}
+input:checked + .menu-open-button .menu-line-3 {
+    rotate: -45deg;
+    top: 9px;
+}
+input:checked + .menu-open-button {
+    transform: scale(1);
+  }
