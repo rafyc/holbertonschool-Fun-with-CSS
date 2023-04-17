@@ -1,0 +1,56 @@
+input {
+    opacity: 0;
+}
+.toggle {
+    margin: 50px ;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+}
+.toggle-inner {
+    background-color: rgb(253, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    border: solid 1px rgb(152, 151, 151);
+    transition: background-color 0.25s ease-in ;
+    padding: 4px 10px;
+    font-size: 20px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: white;
+}
+.toggle-inner::before {
+    content: "Yes";
+    opacity: 1;
+}
+.toggle-switch {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(152, 151, 151);
+    position: absolute;
+    top: -5px;
+    left: 75px;
+    border-radius: 40px;
+    right: -25px;
+    bottom: -5px;
+    transition: translate 0.25s ease-in ;
+}
+
+input:checked + .toggle-label .toggle-switch {
+    translate: -100px;
+    transition: translate 0.25s ease-in ;
+}
+input:checked + .toggle-label .toggle-inner  {
+    background-color: rgb(178, 178, 178);
+    transition: background-color 0.25s ease-in ;
+}
+input:checked + .toggle-label .toggle-inner::before  {
+    content: "No";
+    left: 55px;
+    position: absolute;
+    color: rgb(228, 228, 228);
+}
