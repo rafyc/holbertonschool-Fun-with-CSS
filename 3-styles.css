@@ -25,22 +25,22 @@ input {
     align-items: center;
 }
 .menu-item{
-    margin-top: 10px;
     background-color: brown;
     width: var(--size);
     height: var(--size);
     border-radius: calc(var(--size) / 2);
+    position: absolute;
+    top: 0px;
+    z-index: -2;
 }
 
 .menu-item:hover i {
     color: brown;
     background-color: white;
-    border: solid 1px gray;
+    border: solid 1px brown;
     border-radius: calc(var(--size) / 2);;
 }
-.menu .menu-item:first-of-type {
-    margin-top: 50px;
-}
+
 .menu-open-button {
     display: flex;
     position: absolute;
@@ -86,3 +86,11 @@ input:checked + .menu-open-button .menu-line-3 {
 input:checked + .menu-open-button {
     transform: scale(1);
   }
+input:checked ~ .menu-item {
+    margin-top: 10px;
+    position: relative;
+    z-index: 0;
+}
+input:checked ~ .menu-item:first-of-type {
+    margin-top: 50px;
+}
