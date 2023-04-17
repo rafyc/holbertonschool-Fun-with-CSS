@@ -13,7 +13,7 @@ a::after {
     left: 69px;
     transform: scaleX(0);
     transform-origin: left;
-
+    transition: transform 0.25s linear;
   }
 
   a:hover::after {
